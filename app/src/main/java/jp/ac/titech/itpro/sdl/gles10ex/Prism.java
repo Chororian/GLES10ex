@@ -16,6 +16,17 @@ public class Prism implements SimpleRenderer.Obj {
 
     public Prism(int n, float l, float h, float x, float y, float z) {
         if (n < 3) n = 3;
+        if (l < 0) {
+            l = -l;
+        }else if (l == 0) {
+            l = 1.0f;
+        }
+        if (h < 0) {
+            h = -h;
+        }else if (h == 0) {
+            h = 1.0f;
+        }
+
         float[] top, side, bottom;
         top = new float[(n + 2) * 3];
         side = new float[4 * n * 3];
